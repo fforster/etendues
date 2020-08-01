@@ -1,0 +1,40 @@
+# Compilation by Francisco Forster,,,,,,,
+# comments are welcome,,,,,,,
+# https://docs.google.com/spreadsheets/d/18iC5KGBt8tb2Hf_DjqLoB1NNI6UJONGXwi1AqOgQiQo/edit?usp=sharing,,,,,,,
+# note that for more than one telescope the total etendue is the sum of etendues,,,,,,,
+names,area,FOV,etendue,npix,year,location,comments
+ASASSN,0.015,140,2.4,34,2014,CL,"needs to be updated, 24 telescopes today"
+ATLAS,0.196,29.16,22.9,205,2017,US-CL-SA,4 telescopes
+BlackGEM,0.33,2.7,13.4,1653,2022,CL,15 telescopes
+Blanco-DECam,12.566,3,37.7,520,2012,CL,
+Clay-MegaCam,33.183,0.16,5.31,340,2015,CL,
+CFHT-MegaCam,10,1,10,340,2003,US,
+CRTS-MLS,1.7,1.2,2.04,16,2009,US,
+CRTS-CSS,0.4,8.1,3.24,16,2009,US,
+CRTS-SSS,0.2,4.2,0.84,16,2009,US,
+#E-ELT,1116,0.03,31,144,2025,CL,"max FoV, npix assuming 0.05"" per pixel"
+Euclid,1.13,0.53,0.599,527,2020,space,
+Evryscope,0.00385,9060,34.8,700,2017,CL,
+GAIA,0.7,2.04,1.428,952,2013,space,
+#GMT,368,0.11,40.5,576,2024,CL,"max FoV, npix assuming 0.05"" per pixel"
+HATPI,0.008,5000,39,264,2019,CL,
+Kepler,0.7,115,80.5,95,2009,space,
+KMTNet,1.5,4,18,324,2015,CL-SA-AU,3 telescopes
+#KMTNet-CL,1.5,4,6,324,2015,CL,
+#KMTNet-SA,1.5,4,6,324,2015,SA,
+#KMTNet-AU,1.5,4,6,324,2015,AU,
+KISO,0.87,4.84,4.191,64,2012,JP,
+#LS-QUEST,0.78,10,7.8,57,2009,CL,
+LS-QUEST2,0.78,20,15.6,512,2022,CL,
+LSST,33.183,9.62,319.22,3200,2022,CL,
+PanSTARRS,1.857,7,13,1400,2008,US,
+PTF,1.131,7.3,8.25,88,2009,US,
+SDSS,4.9,4,19.8,125,2006,US,
+Subaru-HSC,52.8,1.5,79.2,870,2012,US,
+SkyMapper,0.945,5.5,5.2,256,2014,AU,
+TESS,0.0346,2304,79.7184,67,2018,space,
+#TMT,655,0.11,72.7,576,2027,US,"max FoV, npix assuming 0.05"" per pixel"
+VISTA,13.2,1.5,19.8,67,2009,CL,
+VST-OmegaCam,5.515,1,5.52,256,2011,CL,
+WFIRST,4.52,0.28,1.267,288,2025,space,
+ZTF,1.131,47,53.16,576,2018,US,
