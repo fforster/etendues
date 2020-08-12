@@ -4,8 +4,12 @@ from pylab import *
 import matplotlib.image as mpimg
 import pandas as pd
 
-# read data
-df = pd.read_csv("etendues.csv", comment = "#")
+# read data from google slides
+
+#df = pd.read_csv("etendues.csv", comment = "#")
+url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrmdDf0mJD-oCCzCiXVcUyVghZlayKtH3D9Ha2wm7-od8usnnaIL9v9T3C41fP2WWoOtAnqbzD2Wvu/pub?gid=0&single=true&output=csv"
+df = pd.read_csv(url, comment = "#")
+df.to_csv("etendues_latest.csv")
 
 # bubble plot
 fig, ax = plt.subplots(figsize = (12, 8))#8, 7))
