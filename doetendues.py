@@ -1,18 +1,28 @@
 import sys
 import numpy as np
 from pylab import *
+import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import pandas as pd
 
 # read data from google slides
 
-#df = pd.read_csv("etendues.csv", comment = "#")
-url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrmdDf0mJD-oCCzCiXVcUyVghZlayKtH3D9Ha2wm7-od8usnnaIL9v9T3C41fP2WWoOtAnqbzD2Wvu/pub?gid=0&single=true&output=csv"
-df = pd.read_csv(url, comment = "#")
-df.to_csv("etendues_latest.csv")
+reload = True
+if reload:
+    #df = pd.read_csv("etendues.csv", comment = "#")
+    url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrmdDf0mJD-oCCzCiXVcUyVghZlayKtH3D9Ha2wm7-od8usnnaIL9v9T3C41fP2WWoOtAnqbzD2Wvu/pub?output=csv"
+    df = pd.read_csv(url, comment = "#")
+    df.to_csv("etendues_latest.csv")
+else:
+    df = pd.read_csv("etendues_latest.csv", comment = "#")
+
+# change Mpix to pix
+df.npix = 1e6 * df.npix
+    
+print("Doing etendue plot")
 
 # bubble plot
-fig, ax = plt.subplots(figsize = (12, 8))#8, 7))
+fig, ax = plt.subplots(figsize = (12, 8))
 im = ax.scatter(df.area, df.FOV, marker = '.', s = 200 * df.etendue, c = np.log10(df.npix), edgecolor = 'none', alpha = 0.8)
 
 # add text, small position corrections
@@ -50,7 +60,7 @@ cb.draw_all()
 ax.set_yscale('log')
 ax.set_xscale('log')
 ax.set_title("Etendue of survey telescopes (circle size)", fontsize=16)
-ax.set_xlabel("light collecting area [m$^2$]", fontsize=16)
+ax.set_xlabel("Light collecting area [m$^2$]", fontsize=16)
 ax.set_ylabel("FOV [deg$^2$]", fontsize=16)
 ax.set_xlim(0.002, 200)
 ax.set_ylim(1e-1, 3e4)
@@ -58,6 +68,8 @@ plt.tight_layout()
 plt.savefig("etendue.png")
 plt.savefig("etendue.pdf")
 
+
+print("etendue figure updated")
 
 # Other statistics
 if len(sys.argv) > 1:
